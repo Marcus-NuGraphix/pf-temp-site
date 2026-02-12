@@ -1,0 +1,93 @@
+{
+  "brand": {
+    "name": "The Portuguese Forum",
+    "tagline": "The Voice of the Community.",
+    "legalName": "The Portuguese Forum",
+    "templateProvider": "The Portuguese Forum"
+  },
+  "domain": {
+    "primaryHost": "portugueseforum.org.za",
+    "canonicalHost": "portugueseforum.org.za",
+    "baseUrl": "https://portugueseforum.org.za"
+  },
+  "emails": {
+    "deleteRequestsTo": "delete@portugueseforum.org.za",
+    "privacyTo": "info@portugueseforum.org.za",
+    "fromNoReply": "no-reply@portugueseforum.org.za"
+  },
+  "contact": {
+    "phone": "086 111 1126",
+    "address": "South Africa",
+    "supportHours": "Mon-Fri, 08:00-17:00"
+  },
+  "urls": {
+    "privacyPolicyPath": "/privacy-policy/",
+    "deleteMyDataPath": "/delete-my-data/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/groups/portugueseforumsa",
+    "instagram": "https://www.instagram.com/portugueseforum/",
+    "linkedin": "",
+    "x": "",
+    "youtube": ""
+  },
+  "theme": {
+    "primary": "#175E20",
+    "accent": "#95BA3A",
+    "destructive": "#B91C1C",
+    "light": {
+      "background": "#F9FCF5",
+      "surface": "#FFFFFF",
+      "sidebar": "#F2F8EA",
+      "foreground": "#152615",
+      "muted": "#355238",
+      "secondary": "#E4EED5",
+      "border": "#C1D7A7",
+      "ring": "#175E20"
+    },
+    "dark": {
+      "background": "#0C3111",
+      "surface": "#113E17",
+      "sidebar": "#0E3614",
+      "foreground": "#ECF5E5",
+      "muted": "#ABC09D",
+      "secondary": "#174B1E",
+      "border": "rgba(149,186,58,0.34)",
+      "ring": "#95BA3A"
+    }
+  },
+  "assets": {
+    "logo": "/assets/svg/logo.svg",
+    "logoWhite": "/assets/svg/logo-white.svg",
+    "icon": "/assets/svg/icon.svg",
+    "favicon": "/assets/favicon.ico",
+    "ogImage": "/assets/svg/under-construction-graphic.svg",
+    "splashBg": "/assets/svg/under-construction-graphic.svg"
+  },
+  "features": {
+    "enableDeleteForm": true,
+    "enableNoIndex": true,
+    "enableAnalytics": false,
+    "enableCspStrict": true,
+    "enableTemplateProviderBanner": false
+  },
+  "copy": {
+    "homeStatus": "Temporary website in progress.",
+    "homeHeadline": "The Portuguese Forum",
+    "homeSubtitle": "Website under construction.",
+    "footerSummary": "Founded in 2001, The Portuguese Forum advocates for and supports the Portuguese-South African community.",
+    "templateCredit": "Temporary holding page for The Portuguese Forum.",
+    "privacyIntro": "This page explains how The Portuguese Forum collects, uses, and protects personal information.",
+    "deleteIntro": "Use this page to request deletion of personal data from The Portuguese Forum.",
+    "siteDescription": "The Portuguese Forum temporary holding site with privacy and delete-my-data routes.",
+    "deleteFormNote": "This form is for privacy requests only and is not an emergency communication channel."
+  },
+  "legal": {
+    "effectiveDate": "2024-02-15",
+    "lastUpdated": "2025-02-05"
+  },
+  "analytics": {
+    "scriptUrl": "",
+    "dataDomain": ""
+  }
+}

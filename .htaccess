@@ -1,0 +1,74 @@
+# xneelo shared hosting hardening template.
+# Reference: "Force HTTPS using a .htaccess file via the xneelo Control Panel"
+
+Options -Indexes
+ServerSignature Off
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1) Force HTTPS first.
+  # Local dev exception: Docker preview on localhost uses plain HTTP.
+  RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:\d+)?$ [NC]
+  RewriteCond %{HTTP_HOST} !^\[::1\](:\d+)?$ [NC]
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE]
+
+  # 2) Canonical host redirect.
+  RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$ [NC]
+  RewriteCond %{HTTP_HOST} !^portugueseforum\.org\.za$ [NC]
+  RewriteRule ^ https://portugueseforum.org.za%{REQUEST_URI} [R=301,L,NE]
+
+  # 3) Legacy compatibility redirects.
+  RewriteRule ^privacy-policy\.html$ /privacy-policy/ [R=301,L]
+  RewriteRule ^delete-my-data\.html$ /delete-my-data/ [R=301,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Security headers (applied when mod_headers is available).
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'sha256-0i9DyIj2x5PIg/rlYdDuE5nGkBVJd8vA0Ye1Q0PQzX8='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; upgrade-insecure-requests"
+
+  # HTML/PHP should not be long-cached on temporary sites.
+  <FilesMatch "\.(?:html?|php)$">
+    Header always set Cache-Control "no-store, no-cache, must-revalidate"
+    Header always set Pragma "no-cache"
+    Header always set Expires "0"
+  </FilesMatch>
+
+  # Static files can be cached briefly.
+  <FilesMatch "\.(?:css|js|mjs|svg|ico|png|jpg|jpeg|webp|gif|woff|woff2)$">
+    Header always set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/xhtml+xml "access plus 0 seconds"
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType text/javascript "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 7 days"
+  ExpiresByType image/x-icon "access plus 7 days"
+  ExpiresByType image/png "access plus 7 days"
+  ExpiresByType image/jpeg "access plus 7 days"
+  ExpiresByType image/webp "access plus 7 days"
+  ExpiresByType font/woff "access plus 7 days"
+  ExpiresByType font/woff2 "access plus 7 days"
+</IfModule>
+
+# Prevent direct access to template/build files if they are uploaded.
+<FilesMatch "^(?:site\.config\.json|package\.json|package-lock\.json)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Deny from all
+  </IfModule>
+</FilesMatch>

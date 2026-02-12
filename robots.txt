@@ -1,0 +1,4 @@
+# Auto-generated in public_html by tools/apply-branding.mjs
+User-agent: *
+Disallow: /
+Sitemap: https://portugueseforum.org.za/sitemap.xml
