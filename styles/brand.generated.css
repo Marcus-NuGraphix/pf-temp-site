@@ -54,7 +54,7 @@
   --warning: #a36b00;
   --error: var(--color-destructive);
   --info: var(--color-primary);
-  --splash-bg-image: url("/assets/svg/under-construction-graphic.svg");
+  --splash-bg-image: url("/assets/png/logo.png");
 }
 
 @media (prefers-color-scheme: dark) {
@@ -113,7 +113,7 @@
     --warning: #a36b00;
     --error: var(--color-destructive);
     --info: var(--color-primary);
-    --splash-bg-image: url("/assets/svg/under-construction-graphic.svg");
+    --splash-bg-image: url("/assets/png/logo.png");
   }
 }
 
@@ -173,7 +173,7 @@ body[data-theme="light"] {
   --warning: #a36b00;
   --error: var(--color-destructive);
   --info: var(--color-primary);
-  --splash-bg-image: url("/assets/svg/under-construction-graphic.svg");
+  --splash-bg-image: url("/assets/png/logo.png");
 }
 
 :root[data-theme="dark"],
@@ -232,5 +232,5 @@ body[data-theme="dark"] {
   --warning: #a36b00;
   --error: var(--color-destructive);
   --info: var(--color-primary);
-  --splash-bg-image: url("/assets/svg/under-construction-graphic.svg");
+  --splash-bg-image: url("/assets/png/logo.png");
 }

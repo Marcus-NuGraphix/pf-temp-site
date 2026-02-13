@@ -73,10 +73,10 @@ Configure mailbox/forwarding in hosting control panel:
 Recommended: keep forwarding at domain level so form destination can remain stable even if internal team inboxes change.
 
 ## Placeholder Asset Notes
-Current logo/icon files are clean placeholders and should be replaced with final approved Portuguese Forum brand assets when available:
-- `assets/svg/logo.svg`
-- `assets/svg/logo-white.svg`
-- `assets/svg/icon.svg`
+Current logo assets are PNG:
+- `assets/png/logo.png`
+- `assets/png/logo-white.png`
+- `assets/png/` is the active source for logo references in page markup and config.
 - `assets/favicon.ico` (optional refresh)
 
 ## Local Testing

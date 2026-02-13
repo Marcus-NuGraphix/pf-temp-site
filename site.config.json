@@ -57,12 +57,12 @@
     }
   },
   "assets": {
-    "logo": "/assets/svg/logo.svg",
-    "logoWhite": "/assets/svg/logo-white.svg",
-    "icon": "/assets/svg/icon.svg",
+    "logo": "/assets/png/logo.png",
+    "logoWhite": "/assets/png/logo-white.png",
+    "icon": "/assets/png/logo.png",
     "favicon": "/assets/favicon.ico",
-    "ogImage": "/assets/svg/under-construction-graphic.svg",
-    "splashBg": "/assets/svg/under-construction-graphic.svg"
+    "ogImage": "/assets/png/logo.png",
+    "splashBg": "/assets/png/logo.png"
   },
   "features": {
     "enableDeleteForm": true,
