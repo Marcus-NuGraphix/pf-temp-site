@@ -1,9 +1,19 @@
 {
   "brand": {
     "name": "The Portuguese Forum",
-    "tagline": "The Voice of the Community.",
+    "tagline": "Bridging the Portuguese Community Worldwide",
     "legalName": "The Portuguese Forum",
-    "templateProvider": "The Portuguese Forum"
+    "templateProvider": "The Portuguese Forum",
+    "motif": "azulejo",
+    "logo": "/assets/png/logo.png",
+    "logoWhite": "/assets/png/logo-white.png",
+    "palette": {
+      "primary": "#175E20",
+      "accent": "#95BA3A",
+      "red": "#BA2438",
+      "ink": "#142539",
+      "background": "#F9FCF5"
+    }
   },
   "domain": {
     "primaryHost": "portugueseforum.org.za",
